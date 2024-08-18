@@ -1,0 +1,618 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>HACKERUG06 SHOPPING PLATFORM</title>
+    <style>
+      /*Basic reset*/
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      /*Basic styling for the navigation bar*/
+body{
+font-family: Arial,sans-serif;
+}
+ nav{
+background-color:rgb(38, 7, 73);
+padding:10px;
+position: fixed;
+width: 100%;
+text-align: center;
+}
+ nav ul {
+list-style-type:
+none;
+     margin:0;
+     padding:0;
+     overflow:hidden;
+     
+}
+ nav ul li {
+    list-style-type:
+none;
+     margin: 0;
+     padding: 0;
+     height: 50%;
+overflow: hidden;
+}
+ nav ul li {
+    float: left;
+    margin-right: 20px;
+    margin: 1%;
+}
+ nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+ nav ul li a:hover {
+     background-color:
+#575757;
+        }
+h1{color:rgb(13, 224, 59);}
+h2{color:rgb(250, 28, 139);}
+h4{color:rgb(250, 28, 139);}
+.myhub{color:rgb(250, 28, 139);}
+p{color:green;}
+.mytext{color:green;}
+      /*The Cart Summary*/
+      .cart-summary {
+        position: fixed;
+        width: 29%;
+        height: 20%;
+        padding: 20px;
+        background: rgb(38, 7, 73);
+        right: 0px;
+        bottom: 81%;
+      }
+      /*container holding the search bar*/
+      .search-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      /*style the search bar input field*/
+      .search-bar {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: width 0.4s ease-in-out;
+      }
+      /*style the search button*/
+      .search-button{
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+        /*add focus effect on the input field*/
+        .search-bar:focus{
+          width: 350px;
+          border-color: none;
+        }
+        /*change button color on hover*/
+        .search-button:hover{
+          background-color: #0056b3;
+        }
+      }
+      
+      .products {
+        width: 100%;
+      }
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .product {
+        background: #ffff;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: calc(33.333% - 20px);
+      }
+      .product h3 {
+        margin: 10px 0;
+      }
+      .product button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px; 
+      }
+      .product hover {
+        background: #0056b3;
+      }
+      /*Footer styling*/
+      footer {
+        background: rgb(38, 7, 73);
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        margin-top: 20px;
+      }
+      /*Contact Section Styling*/
+      .contact-section {
+        background-color: #f8f9fa;
+        padding: 40px 20px;
+        text-align: center;
+        border-top: 2px solid #007bff;
+        margin-top: 40px; /*Adds space above the contact section*/
+      }
+      .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .contact-details{
+        margin-bottom: 30px;
+      }
+      .contact-details p {
+        font-size: 16px;
+        color: #555;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-form label {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 5px;
+        text-align: left;
+        color: #007bff;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+        background-color: #fff;
+      }
+      .contact-form button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+      /*Footer Styling*/
+      footer {
+        background:rgb(38, 7, 73);;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        margin-top: 20px;
+      }
+    </style>
+    <link rel="stylesheet"
+  href="styles.css">
+  </head>
+    <body>
+        <!--Header-->
+        <header>
+      <nav>
+        <h1>HACKERUG06 ONLINE SHOPPING</h1>
+          <ul>
+               <li><a
+href="#">Home</a></li>
+               <li><a
+href="#shop">Shop</a></li>
+               <li><a
+href="#about">About</a></li>
+               <li><a
+href="#contact">Contact Us</a></li>
+               <li><a
+href="#cart">Cart (0)</a></li>
+          </ul>
+      </nav>
+        </header>
+        <!--Main Content-->
+        <main>
+          <p>About Us
+            Welcome to Hackerug06 Study Platform,your comprehensive online resource for studying.
+            Our mission is to empower learners by providing them with the tools, resources, and guidance they need to excel academically and achieve their educational goals.
+            
+            Who we Are;
+            At Hackerug06 Study platform, we are a passionate team of educators, subject matter experts, and technologists dedicated to making high-quality education accessible to everyone. With a deep understanding of the challenges faced by students today, we strive to create a learning environment that is both engaging and effective.
+            
+            Our Vision
+            We believe that education is the key to unlocking potential. Our vision to create a platform where students can access the knowledge they need, regardless of thier background or location. By leveraging technology, we aim to break down barriers to</p>
+          <!--Search bar input field-->
+          <div class="search-container">
+            <form action="/search"
+            method="GET"
+            <input type="text"
+            placeholder="search..." name="q"
+            class="search-bar">
+            <button type="submit"
+            class="search-button">Search</button>
+          </form>
+          </div>
+          </aside>
+          <!--Product Listing-->
+          <section
+class="products">
+             <h2>Products</h2>
+             <h3>Electronics</h3>
+           <!-- Electronic Section-->
+             <div
+class="product-list">
+                  <div
+class="product">
+                   <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/4257861/1.jpg?5716.jpg"width="190px" height="200px" alt="Product 1">
+                  <h3>White Extension</h3>
+                <p>UGX:45,000</p>
+                <button>Add to cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/89/14746/1.jpg?1465.jpg"width="190px" height="200px" alt="product 2">
+                    <h3>Smart watch</h3>
+                    <p>UGX:50,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/40/2911502/1.jpg?9210.jpg"width="190px" height="200px" alt="product 3">
+                     <h3>Earpods</h3>
+                     <p>UGX:35,000</p>
+                     <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/41/2385801/1.jpg?3625.jpg"width="190px" height="200px" alt="product 2">
+                     <h3>Smart watch</h3>
+                     <p>UGX:129,990</p>
+                     <button>Add to Cart</button>
+                 </div>
+                 <div
+class="product">
+                      <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/41/9024701/1.jpg?7219.jpg" alt="product 2"width="190px" height="200px">
+                      <h3>Iphone12 pro max</h3>
+                      <p>UGX:2,450,000</p>
+                      <button>Add to Cart</button>
+                  </div>
+                  <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/2115031/1.jpg?9905.jpg" alt="product 3"width="190px" height="200px">
+                    <h3>500mah Power Bank</h3>
+                     <p>UGx:50,000</p>
+                <button>Add to Cart</button>
+              </div>
+              <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/86/0583602/1.jpg?9707.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Double Door Fridge</h3>
+                     <p>UGX:720,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/18/170789/1.jpg?2277.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Bluetooth headsets</h3>
+                     <p>UGX:40,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/58/832909/1.jpg?0610.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Wireless Mouse</h3>
+                     <p>UGX:50,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    </div></section>
+              <section
+class="products">
+<h3>Clothing</h3>
+              <!--Clothing Section-->
+                <div
+class="product-list">              
+              <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/08/141493/1.jpg?8992.jpg" alt="product 4"width="190px" height="200px">
+                    <h3>Yellow Pullover Hood</h3>
+                    <p>UGX45,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/30/7047702/1.jpg?3835.jpg" alt="product 5"width="190px" height="200px">
+                    <h3>Men's Denim Shirt-blue</h3>
+                    <p>UGX:42,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/63/035543/1.jpg?3707.jpg" alt="product 6"width="190px" height="200px">
+                    <h3>Unisex hoodie Jumper-black</h3>
+                    <p>UGX:43,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/03/374162/1.jpg?7007.jpg" alt="product 7"width="190px" height="200px">
+                    <h3>Men's Gentle shirt-blue</h3>
+                    <p>UGX:45,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/79/570141/1.jpg?2589.jpg" alt="product 8"width="190px" height="200px">
+                    <h3>Ladies sweter-multi colour</h3>
+                    <p>UGX:85,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/09/297751/1.jpg?4499.jpg" alt="product 9"width="190px" height="200px">
+                    <h3>Unisex camping hat</h3>
+                    <p>UGX:45,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/08/585521/1.jpg?2861.jpg" alt="product 10" width="190px" height="200px">
+                    <h3>3 adjustable caps</h3>
+                    <p>UGX:2,7000</p>
+                    <button>Add to Cart</button></div> 
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/36/542269/1.jpg?8836.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Empty Top Sun adjustable cap</h3>
+                     <p>UGX:5,500</p>
+                     <button>Add to Cart</button>
+                      </div>  
+                      <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/19/971489/1.jpg?3063.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Sport running lace-up sneakers</h3>
+                     <p>UGX:60,000</p>
+                     <button>Add to Cart</button>
+                    </div>           
+                      </div></section>
+                <section
+class="products">
+<h3>Home & Kitchen</h3>
+<!--Home and kitchen-->
+<div
+class="product-list">
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/97/8962501/1.jpg?4468" alt="product 10"width="190px" height="200px">
+                    <h3>Wooden rolling board</h3>
+                    <p>UGX:25,000 per book</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/54/124215/1.jpg?1979.jpg" alt="product 11"width="190px" height="200px">
+                    <h3>Juice blender</h3>
+                    <p>UGX:68,000</p>
+                    <button>Add to Cart</button>
+                 </div>
+                 <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/52/2259241/1.jpg?3552.jpg" alt="product 12"width="190px" height="200px">
+                     <h3>Electric deep fryer</h3>
+                     <p>UGX:19,2000</p>
+                     <button>Add to Cart</button>
+                  </div>
+                  <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/72/923069/1.jpg?3249.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Vacuum Flask-silver</h3>
+                     <p>UGX:55,000</p>
+                     <button>Add to Cart</button>
+                  </div>  
+                  <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/388447/1.jpg?5353.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Adjustable electric fun</h3>
+                     <p>UGX:14,5000</p>
+                     <button>Add to Cart</button>
+                  </div>
+                  <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/37/551482/1.jpg?1992.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Ceiling cob-web broom</h3>
+                     <p>UGX:20,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/08/268053/1.jpg?8254.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>storage rack-plastic</h3>
+                     <p>UGX:35,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/07/71038/1.jpg?7104.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Wooden chopping board</h3>
+                     <p>UGX:20,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/48/91714/1.jpg?4038.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Wooden chopping board</h3>
+                     <p>UGX:24,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    </div>
+                  </section>
+                    <section
+class="products">
+<h3>Books</h3>
+<!--Books section-->
+<div
+class="product-list">
+<div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/09/8843861/1.jpg?4856.jpg" alt="product 8"width="190px" height="200px">
+                    <h3>Picfare black book half dozen</h3>
+                    <p>UGX:59,000</p>
+                    <button>Add to Cart</button>
+                </div>
+<div
+class="product">
+                    <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/72/1253861/1.jpg?9458" alt="product 10"width="190px" height="200px">
+                    <h3>Champion study book dozen</h3>
+                    <p>UGX:89,000 per book</p>
+                    <button>Add to Cart</button>
+                </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/16/250751/1.jpg?8366.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>A5 size notebook</h3>
+                     <p>UGX:18,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/15/713683/1.jpg?5343.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Notebook official size</h3>
+                     <p>UGX:24,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/95/250751/1.jpg?8366.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>A5 size notebook</h3>
+                     <p>UGX:17,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/84/713683/1.jpg?8359.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Notebook-grey</h3>
+                     <p>UGX:25,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    </div>
+                    </section>
+                    <h3>Toys</h3>
+                    <!--Toys section-->
+            <div
+class="product-list">
+             <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/63/632765/1.jpg?2006" alt="product 8"width="190px" height="200px">
+                     <h3>Cactus dancing tree</h3>
+                     <p>UGX:60,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                      <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/33/8332061/1.jpg?5872.jpg" alt="product 8"width="190px" height="200px">
+                      <h3>Blue electric bike-kids</h3>
+                      <p>UGX:332,000</p>
+                      <button>Add to Cart</button>
+                     </div>
+                     <div
+class="product">
+                      <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/48/5601701/1.jpg?6065.jpg" alt="product 8"width="190px" height="200px">
+                      <h3>Toy car with headlights</h3>
+                      <p>UGX:55,500</p>
+                      <button>Add to Cart</button>
+                      </div>
+                      <div
+class="product">
+                      <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/71/2097011/1.jpg?2559.jpg" alt="product 8"width="190px" height="200px">
+                      <h3>Baby toddler truck</h3>
+                      <p>UGX:55,000</p>
+                      <button>Add to Cart</button>
+                     </div>
+                     <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/37/526583/1.jpg?2907.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>kids play ball</h3>
+                     <p>UGX:25,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                    <div
+class="product">
+                     <img src="https://ug.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/61/4289901/1.jpg?7526.jpg" alt="product 8"width="190px" height="200px">
+                     <h3>Kids container truck</h3>
+                     <p>UGX:75,000</p>
+                     <button>Add to Cart</button>
+                    </div>
+                     </div>
+                     </section>      
+              <!--Add more products as needed-->
+              </div>
+              </section>
+              <!-- Shopping Cart Summary -->
+               <aside
+class="cart-summary">
+<h2>Shopping Cart</h2>
+<p><b>No items in the cart</b></p>
+<button>Checkout</button>
+        </aside>
+    </main>
+        <!-- Contact Section-->
+        <section
+        class="contact-section">
+       <div
+     class="contact-container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions feel free to reach out to us!</p>
+    <div
+    class="contact-details">
+    <p><strong>Email:</strong>hackerug06@gmail.com</p>
+    <p><strong>Phone:</strong>+256761399903</p><p>+256753979539</p></div>
+    <form
+    class="contact-form" action="/submit-form" method="POST">
+    <label
+    for="name">Your Name</label>
+    <input type="text"
+    id="name" name="name"
+    placeholder="Enter your name"required>
+    <label
+    for="email">Your Email</label>
+    <input type="email"
+    id="email" name="email"
+    placeholder="Enter your email"required>
+    <label
+    for="message">Your Message</label>
+    <textarea
+    id="message" name="message"
+    rows="5" placeholder="Enter your message" required></textarea>
+    <button
+    type="submit">Send Message</button>
+    </form>
+    </div>
+    </section>
+    <footer>
+      <p>&copy; 2024 Your Shop. All rights Reserved.</p>
+    </footer>
+    </body>  
+</html>
